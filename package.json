@@ -1,39 +1,44 @@
 {
-  "name": "repodoc-ai",
+  "name": "codevoyage",
   "version": "1.0.0",
   "type": "module",
-  "description": "AI-powered repository documentation generator using Subconscious",
+  "description": "AI-powered tech stack migration planning using multi-agent analysis",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/index.js",
-    "dev": "npm run build && node dist/index.js",
     "test:agent1": "npm run build && node dist/test-agent1.js",
     "test:agent2": "npm run build && node dist/test-agent2.js",
     "test:agent3": "npm run build && node dist/test-agent3.js",
     "test:agent4": "npm run build && node dist/test-agent4.js",
     "test:orchestrator": "npm run build && node dist/test-orchestrator.js",
-    "test:all": "npm run test:orchestrator"
+    "analyze": "npm run test:orchestrator"
   },
   "keywords": [
     "ai",
-    "documentation",
-    "github",
-    "subconscious"
+    "migration",
+    "tech-stack",
+    "multi-agent",
+    "subconscious",
+    "code-analysis",
+    "developer-tools"
   ],
   "author": "Trishal Varma Mudunuri",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mtrishal123/codevoyage.git"
+  },
   "dependencies": {
-    "@octokit/rest": "^22.0.1",
-    "axios": "^1.13.2",
-    "dotenv": "^17.2.3",
-    "express": "^5.2.1",
+    "@octokit/rest": "^21.0.2",
+    "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
     "subconscious": "^0.1.9"
   },
   "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/node": "^25.0.10",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
   }
 }
