@@ -1,0 +1,15 @@
+
+node_modules/
+*.log
+dist/
+build/
+.next/
+.env
+.env.local
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+outputs/*.md
+!outputs/EXAMPLE_*.md
+"@ | Out-File -FilePath .gitignore -Encoding utf8

@@ -1,0 +1,39 @@
+{
+  "name": "repodoc-ai",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "AI-powered repository documentation generator using Subconscious",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "npm run build && node dist/index.js",
+    "test:agent1": "npm run build && node dist/test-agent1.js",
+    "test:agent2": "npm run build && node dist/test-agent2.js",
+    "test:agent3": "npm run build && node dist/test-agent3.js",
+    "test:agent4": "npm run build && node dist/test-agent4.js",
+    "test:orchestrator": "npm run build && node dist/test-orchestrator.js",
+    "test:all": "npm run test:orchestrator"
+  },
+  "keywords": [
+    "ai",
+    "documentation",
+    "github",
+    "subconscious"
+  ],
+  "author": "Trishal Varma Mudunuri",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^22.0.1",
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "subconscious": "^0.1.9"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.0.10",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}
