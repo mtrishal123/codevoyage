@@ -9,7 +9,7 @@
 
 > Chart your migration journey with AI. Analyze codebases, research best practices, estimate effort, and create actionable migration roadmaps using multi-agent orchestration.
 
-**[Live Demo](#)** • **[GitHub](https://github.com/mtrishal123/codevoyage)**
+**[Live Demo](https://codevoyage-frontend.onrender.com)** • **[GitHub](https://github.com/mtrishal123/codevoyage)**
 
 ---
 
@@ -295,15 +295,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- **Subconscious** - For building an amazing multi-agent platform
-- **Exa** - For powerful semantic search capabilities
-- **Render** - For deployment infrastructure
-- **Anthropic** - For Claude AI assistance during development
 
 ---
 
