@@ -8,8 +8,18 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Middleware
-app.use(cors());
+// CORS configuration - filter out undefined values
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  'http://localhost:3000',
+  'http://localhost:3001'
+].filter((origin): origin is string => typeof origin === 'string');
+
+app.use(cors({
+  origin: allowedOrigins.length > 0 ? allowedOrigins : '*',
+  credentials: true
+}));
+
 app.use(express.json());
 
 // Health check
@@ -32,7 +42,6 @@ app.post('/api/analyze', async (req, res) => {
     console.log(`   Repo: ${repoUrl}`);
     console.log(`   Target: ${targetStack}\n`);
 
-    // Start the analysis (this will take ~15-20 minutes)
     const result = await orchestrateMigrationAnalysis(repoUrl, targetStack);
 
     res.json({
@@ -49,6 +58,5 @@ app.post('/api/analyze', async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`\n🚀 CodeVoyage API running on http://localhost:${PORT}`);
-  console.log(`📍 Health check: http://localhost:${PORT}/api/health\n`);
+  console.log(`\n🚀 CodeVoyage API running on port ${PORT}`);
 });

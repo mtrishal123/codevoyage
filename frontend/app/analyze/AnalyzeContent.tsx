@@ -48,7 +48,8 @@ export default function AnalyzeContent() {
       });
     }, 240000);
 
-    fetch('http://localhost:3001/api/analyze', {
+    const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001';
+    fetch(`${API_URL}/api/analyze`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ repoUrl, targetStack }),
