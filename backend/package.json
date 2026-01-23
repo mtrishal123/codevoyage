@@ -1,17 +1,18 @@
 {
-  "name": "codevoyage",
+  "name": "codevoyage-backend",
   "version": "1.0.0",
   "type": "module",
   "description": "AI-powered tech stack migration planning using multi-agent analysis",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts",
     "test:agent1": "npm run build && node dist/test-agent1.js",
     "test:agent2": "npm run build && node dist/test-agent2.js",
     "test:agent3": "npm run build && node dist/test-agent3.js",
     "test:agent4": "npm run build && node dist/test-agent4.js",
-    "test:orchestrator": "npm run build && node dist/test-orchestrator.js",
-    "analyze": "npm run test:orchestrator"
+    "test:orchestrator": "npm run build && node dist/test-orchestrator.js"
   },
   "keywords": [
     "ai",
@@ -31,11 +32,13 @@
   "dependencies": {
     "@octokit/rest": "^21.0.2",
     "axios": "^1.7.9",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "subconscious": "^0.1.9"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.5",
     "tsx": "^4.19.2",
