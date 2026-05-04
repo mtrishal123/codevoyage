@@ -14,7 +14,6 @@ export async function analyzeCurrentStack(
   analysis: string;
   usage: any;
 }> {
-  console.log('🔍 [Agent 1] Analyzing current tech stack...');
 
   const instructions = `You are a senior software architect performing a technical analysis for migration planning.
 
@@ -106,17 +105,12 @@ Be specific, technical, and thorough. Use actual versions and concrete details w
       analysis = String(answer);
     }
 
-    console.log('✅ [Agent 1] Current stack analysis completed');
-    console.log(`   Tokens: ${(run.usage as any)?.inputTokens + (run.usage as any)?.outputTokens || 0}`);
-    console.log(`   Duration: ${Math.round(((run.usage as any)?.durationMs || 0) / 1000)}s`);
-
     return {
       runId: run.runId,
       analysis,
       usage: run.usage,
     };
   } catch (error) {
-    console.error('❌ [Agent 1] Error:', error);
     throw error;
   }
 }
