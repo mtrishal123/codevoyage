@@ -16,8 +16,6 @@ export async function estimateEffort(
   estimate: string;
   usage: any;
 }> {
-  console.log('📊 [Agent 3] Estimating migration effort...');
-
   // ULTRA-SIMPLE PROMPT
   const instructions = `Based on this tech stack analysis and migration research, estimate the effort required.
 
@@ -44,10 +42,8 @@ Be specific with numbers. Keep it practical.`;
       options: { awaitCompletion: true },
     });
 
-    console.log(`   Status: ${run.status}`);
 
     if (run.status !== 'succeeded') {
-      console.error('   Full run:', JSON.stringify(run, null, 2));
       throw new Error(`Agent 3 failed: ${run.status}`);
     }
 
