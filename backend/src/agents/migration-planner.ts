@@ -18,7 +18,6 @@ export async function createMigrationPlan(
   plan: string;
   usage: any;
 }> {
-  console.log('📋 [Agent 4] Creating migration plan...');
 
   // ULTRA-SIMPLE PROMPT
   const instructions = `Create a migration plan for ${repoUrl} to move to ${targetStack}.
@@ -51,10 +50,8 @@ Be specific and actionable. Make it a plan a team can execute immediately.`;
       options: { awaitCompletion: true },
     });
 
-    console.log(`   Status: ${run.status}`);
 
     if (run.status !== 'succeeded') {
-      console.error('   Full run:', JSON.stringify(run, null, 2));
       throw new Error(`Agent 4 failed: ${run.status}`);
     }
 
@@ -77,10 +74,6 @@ Be specific and actionable. Make it a plan a team can execute immediately.`;
     } else {
       plan = String(answer);
     }
-
-    console.log('✅ [Agent 4] Migration plan created');
-    console.log(`   Tokens: ${(run.usage as any)?.inputTokens + (run.usage as any)?.outputTokens || 0}`);
-    console.log(`   Duration: ${Math.round(((run.usage as any)?.durationMs || 0) / 1000)}s`);
 
     return {
       runId: run.runId,
